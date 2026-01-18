@@ -1,0 +1,175 @@
+.my-font {
+  font-family: Arial, sans-serif;
+}
+
+body {
+  max-width: 1200px;  /* Maximum width; adjust as needed (e.g., 800px for narrower) */
+  margin: 0 auto;     /* Centers the page horizontally */
+}
+
+
+body {
+  background-color: rgba(255, 248, 248, 0.781);  /* Change to any color, e.g., #f0f0f0 or blue */
+}
+
+h1 {
+  font-size: 2.5em;
+  line-height: 1.5;
+  text-align: center;
+}
+
+h2{
+  color: dodgerblue;
+  text-align: center;
+  line-height: 2.0;
+}
+
+h3{
+  text-align: center;
+  line-height: 2.0;
+}
+
+p{
+  text-align: center;
+  line-height: 1.0;
+}
+
+img {
+  max-width: 100%;  /* Scales to container width */
+  height: auto;   /* Maintains aspect ratio */
+  display: block;    /* Makes the image a block element for centering */
+  margin: 0 auto;    /* Centers horizontally */
+}
+
+.banner {
+  background-color: dodgerblue;  /* Blue background to match your h2 color */
+  color: white;                  /* White text for contrast */
+  text-align: center;            /* Centers the h1 text */
+  padding: 50px;                 /* Adds space inside the banner */
+  margin-bottom: 50px;           /* Space below the banner */
+}
+
+nav {
+  display: flex;          /* Arranges links horizontally */
+  gap: 10px;              /* Space between buttons */
+  justify-content: center; /* Centers the buttons on the page */
+}
+
+nav a {
+  background-color: white;    /* White background */
+  color: black;               /* Black text for contrast */
+  padding: 10px 20px;         /* Space inside buttons */
+  border: 1px solid #ccc;     /* Light gray border */
+  text-decoration: none;      /* Removes underline */
+  border-radius: 5px;         /* Rounded corners for button look */
+  transition: background-color 0.5s ease-in-out, transform 0.5s /* Smooth hover effect */
+}
+
+nav a:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-5px);
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;  /* Wraps items to next row if no space */
+  gap: 10px;        /* Space between boxes; adjust (e.g., 20px) */
+  justify-content: center;  /* Centers boxes horizontally */
+}
+
+.box {
+  background-color: dodgerblue;
+  padding: 10px;
+  border-radius: 10px;  /* Curves each corner; adjust for more/less curve */
+  text-align: center;
+  min-width: 100px;
+  color: white;  /* Makes text white */
+  transition: transform 0.3s ease-in-out;  /* Smooth movement */
+  cursor: pointer;  /* Shows pointer on hover */
+}
+
+.box:hover {
+  transform: translateY(-5px);  /* Moves box up by 5px on hover */
+}
+
+.container {
+  width: 595px;           /* A4 width in pixels */
+  max-height: 842px;      /* A4 height; content scrolls if taller */
+  margin: 0 auto 20px;;         /* Centers horizontally */
+  padding: 20px;          /* Space inside for readability */
+  background-color: white; /* White "paper" background */
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Subtle shadow for paper effect */
+  overflow-y: auto;       /* Scroll if content exceeds height */
+  border-radius: 15px;
+  border-top: 2px solid dodgerblue;    /* Line on top */
+  border-bottom: 2px solid dodgerblue; /* Line on bottom */
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;  /* Full width */
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  body {
+    max-width: 100%;
+  }
+  h1 {
+    font-size: 1.5em;
+  }
+  h2 {
+    font-size: 1.2em;
+  }
+  .banner {
+    padding: 30px;
+  }
+  nav {
+    flex-direction: column;  /* Stack nav buttons vertically */
+    gap: 5px;
+  }
+  .flex-container {
+    gap: 8px;
+  }
+  .box {
+    min-width: 70px;
+    padding: 5px;
+    font-size: 14px;
+  }
+  img {
+    width: 100%;  /* Responsive image */
+    height: auto;
+  }
+  table {
+    width: 100%;  /* Full table width */
+  }
+  input, textarea {
+    width: 100%;  /* Full input width */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    width: 90%;  /* Wider for tablets */
+    padding: 15px;
+  }
+  body {
+    max-width: 100%;  /* Full width */
+  }
+  h1 {
+    font-size: 2em;  /* Smaller headings */
+  }
+  .flex-container {
+    gap: 10px;
+  }
+  .box {
+    min-width: 80px;
+    padding: 8px;
+  }
+}
+
+hr {
+  border: none;
+  border-top: 1px solid dodgerblue;  /* Thin gray line */
+  margin: 20px 0;             /* Space around */
+}
+

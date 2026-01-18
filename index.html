@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PongKhun's Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="my-font">
+    <div class="banner">
+        <h1 class="my-font">Pongkhun Khachondechavitit</h1>
+        <h3 class="my-font">Me myself and Me</h3>
+        <nav>
+           <a href="#Profile">Profile</a>
+           <a href="#Interests">Interests</a>
+           <a href="#Contact">Contact</a>
+        </nav>
+    </div>
+    <div class="container">
+        <img src="88407.jpg" alt="PongKhun's Picture" width="200" height="250">
+    <main id="Profile">
+        <h2>Profile</h2>
+    <hr>
+        <p><strong>Name:</strong> Pongkhun Khachondechavitit / shokun</p>
+        <p><strong>Age:</strong> 18</p>
+        <p><strong>Date of birth:</strong> 07 September 2005 / 2550</p>
+        <p><strong>Student ID:</strong> 68102010552</p>
+        <p><strong>Education:</strong> Currently Studying at Srinakharinwirot University</p>
+        <p><strong>Major:</strong> Computer Science</p>
+        </main>
+    </hr>
+    </div>
+    <div class="container">
+    <main id="Interests">
+    <h2>Interests</h2>
+    <hr>
+    <div class="flex-container">
+        <div class="box" draggable="true">Programming</div>
+        <div class="box" draggable="true">Listening to music</div>
+        <div class="box" draggable="true">Gaming</div>
+        <div class="box" draggable="true">Sleeping</div>
+        <div class="box" draggable="true">Eating</div>
+        <div class="box" draggable="true">Writing</div>
+        <div class="box" draggable="true">Weight Lifting</div>
+    </div>
+    </main>
+    </div>
+    <div class="container">
+    <main id="Contact">
+        <h2>Contact Me</h2>
+        <hr>
+        <p>Email : pongkhun.khachondechavitit@g.swu.ac.th</p>
+        <p>Phone Number : 082-105-2976</p>
+    </main>
+    <main>
+        <form>
+            <table>
+                <tr>
+                    <td><label for="name">Name:</label></td>
+                    <td><input type="text" id="name" name="name" required size="40"></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email:</label></td>
+                    <td><input type="email" id="email" name="email" required size="40"></td>
+                </tr>
+                <tr>
+                    <td><label for="message">Message:</label></td>
+                    <td><textarea id="message" name="message" rows="5" cols="40" required></textarea></td>
+                </tr>
+            </table>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    <footer>
+        <p>© 2026 Pongkhun Khachondechavitit</p>
+    </footer>
+    </main>
+    </div>
+</main>
+<script>
+  const boxes = document.querySelectorAll('.box');
+  let draggedBox = null;
+
+  boxes.forEach(box => {
+    box.addEventListener('dragstart', (e) => {
+      draggedBox = e.target;
+      e.target.style.opacity = '0.5';
+    });
+
+    box.addEventListener('dragend', (e) => {
+      e.target.style.opacity = '1';
+      draggedBox = null;
+    });
+
+    box.addEventListener('dragover', (e) => {
+      e.preventDefault();
+    });
+
+    box.addEventListener('drop', (e) => {
+      e.preventDefault();
+      if (draggedBox && draggedBox !== e.target) {
+        const container = e.target.parentNode;
+        const draggedIndex = Array.from(container.children).indexOf(draggedBox);
+        const targetIndex = Array.from(container.children).indexOf(e.target);
+        if (draggedIndex < targetIndex) {
+          container.insertBefore(draggedBox, e.target.nextSibling);
+        } else {
+          container.insertBefore(draggedBox, e.target);
+        }
+      }
+    });
+  });
+</script>
+</body>
+</html>
